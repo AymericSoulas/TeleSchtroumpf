@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "KiCad")(type "KiCad")(uri "/home/as/Prog/KiCadLibs/LIB_ESP32-DEVKITC-VE/ESP32-DEVKITC-VE/KiCad")(options "")(descr ""))
+)
