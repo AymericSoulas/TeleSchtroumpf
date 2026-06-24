@@ -1,3 +1,18 @@
+#include "Convert.h"
+
+String convertPhraseToMorse(String phrase){
+    String morse_res = "";
+    if (phrase.length() > 0){
+        phrase.toUpperCase();
+        for (int i = 0; i < phrase.length() - 1; i++){
+            morse_res += (convertCharToMorse(char(phrase[i])) + "|");
+        }
+        morse_res += (convertCharToMorse(char(phrase[phrase.length() - 1])) + '\n');
+    }
+    return morse_res;
+}
+
+
 String convertCharToMorse(char ch){
     switch (ch) {
         case 'A': return ".-";
@@ -40,6 +55,7 @@ String convertCharToMorse(char ch){
         case ',': return "--..--";
         case '!': return "-.-.--";
         case '@': return ".--.-.";
+        case ' ': return " ";
         default: return "";
     };
   }

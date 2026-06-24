@@ -1,15 +1,10 @@
 #pragma once
-#include <NimBLEDevice.h>
+#include <WebServer.h>
 
-extern NimBLECharacteristic* pTxCharacteristic;
-extern bool deviceConnected;
+extern WebServer server;
+extern SemaphoreHandle_t mutex_message;
+extern String current_message;
+extern volatile bool new_message;
 
-// Server_callbacks.h
-class MyServerCallbacks : public NimBLEServerCallbacks {
-  void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo);
-  void onDisconnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, int reason);
-};
-
-class MyCallbacks : public NimBLECharacteristicCallbacks {
-  void onWrite(NimBLECharacteristic* pCharacteristic, NimBLEConnInfo& connInfo);
-};
+void handleRoot();
+void handleMorse();
