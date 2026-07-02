@@ -1,5 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "ESP32-WROOM-32E")(type "Legacy")(uri "/home/as/Prog/KiCadLibs/LIB_ESP32-WROOM-32E/ESP32-WROOM-32E/KiCad/ESP32-WROOM-32E.lib")(options "")(descr ""))
-  (lib (name "BC337")(type "KiCad")(uri "/home/as/Prog/KiCadLibs/LIB_BC337/BC337/KiCad/BC337.kicad_sym")(options "")(descr ""))
-)
