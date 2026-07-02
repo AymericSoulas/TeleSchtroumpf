@@ -1,6 +1,6 @@
 #pragma once
 #include <WebServer.h>
 
-extern WebServer server;   // ← manquant !
+extern WebServer server;
 
 void tacheWiFi(void* parameter);

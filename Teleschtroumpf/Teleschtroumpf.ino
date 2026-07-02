@@ -5,16 +5,7 @@
 #include "Server_callbacks.h"
 #include "Tasks.h"
 
-// Here we define the pin used for the command of the led
-#define LED 36
-
-// Here we define the timers for the waiting
-#define DOT_TIMER 500
-#define DASH_TIMER 1000
-#define INTER_DOT_DASH_TIMER 500
-#define LETTER_TIMER 1000
-#define WORD_TIMER 2000
-#define PHRASE_TIMER 3000
+// The timers and pins are defined in Convert.h
 
 // The SSID and Password are in a separate .h file (not commited) under the following presentation
 // #define SSID "The SSID"
@@ -109,10 +100,14 @@ void loop() {
     // In the case in which we are at the first part of a phrase, we wait for 3 seconds to mark the start of the phrase.
     if (diffusion_count == 0){
       digitalWrite(LED, LOW);
-
+      delay(PHRASE_TIMER);
+    }
+    if (morse_message.length() != 0){
+      exportdotanddash(diffusion_count);
+      diffusion_count ++;
+      if (morse_message.length() >= diffusion_count){
+        diffusion_count = 0;
+      }
     }
   }
-
-  
-
 }
